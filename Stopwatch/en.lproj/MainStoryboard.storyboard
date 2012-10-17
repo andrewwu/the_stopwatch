@@ -1,23 +1,103 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cd-r4-jl0">
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00:0" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-Vd-pox">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="8Sh-DU-5hk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD4-t1-SVM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aLB-BH-GKn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopButtonPressed:" destination="2" eventType="touchUpInside" id="U9k-L1-15A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-mu-sdb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="iLk-t1-q2U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="2" eventType="touchUpInside" id="9kM-1b-wyh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e9h-Vd-pox" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4yL-EY-Cvc"/>
+                            <constraint firstItem="4cd-r4-jl0" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="D4A-Zo-YWL"/>
+                            <constraint firstItem="e9h-Vd-pox" firstAttribute="centerX" secondItem="4cd-r4-jl0" secondAttribute="centerX" type="default" id="HML-P6-FRe"/>
+                            <constraint firstItem="fvr-mu-sdb" firstAttribute="leading" secondItem="hD4-t1-SVM" secondAttribute="leading" type="default" id="Pmf-qm-Aix"/>
+                            <constraint firstItem="fvr-mu-sdb" firstAttribute="trailing" secondItem="hD4-t1-SVM" secondAttribute="trailing" type="default" id="ROg-7p-eqa"/>
+                            <constraint firstItem="e9h-Vd-pox" firstAttribute="leading" secondItem="hD4-t1-SVM" secondAttribute="leading" type="default" id="T8n-Vs-glN"/>
+                            <constraint firstItem="e9h-Vd-pox" firstAttribute="trailing" secondItem="hD4-t1-SVM" secondAttribute="trailing" type="default" id="ZWd-ca-wru"/>
+                            <constraint firstItem="4cd-r4-jl0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="a98-lD-P6q"/>
+                            <constraint firstItem="fvr-mu-sdb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="214" id="cEg-9z-0LQ"/>
+                            <constraint firstItem="4cd-r4-jl0" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="dZH-hV-e1D"/>
+                            <constraint firstItem="4cd-r4-jl0" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="mXV-3l-nMH"/>
+                            <constraint firstItem="hD4-t1-SVM" firstAttribute="top" secondItem="3" secondAttribute="top" constant="135" id="qkI-jU-pCZ"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="resetButton" destination="fvr-mu-sdb" id="v9g-gu-Yp3"/>
+                        <outlet property="startStopButton" destination="hD4-t1-SVM" id="EaX-Vv-HLV"/>
+                        <outlet property="stopwatchLabel" destination="e9h-Vd-pox" id="fUl-QW-cBD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resetButtonPressed:"/>
+                <relationship kind="action" name="startStopButtonPressed:"/>
+                <relationship kind="outlet" name="resetButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopwatchLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

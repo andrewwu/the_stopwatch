@@ -10,4 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
+- (IBAction)startStopButtonPressed:(id)sender;
+- (IBAction)resetButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
 @end
