@@ -20,7 +20,7 @@
     } else {
         [prefs setBool:autoLockScreenValue forKey:@"autoLockScreen"];
     }
-    NSLog(@"autolock value is %i", autoLockScreenValue);
+
     [[UIApplication sharedApplication] setIdleTimerDisabled:!autoLockScreenValue];
     
     return autoLockScreenValue;
