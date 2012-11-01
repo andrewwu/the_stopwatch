@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "Utilities.h"
 
 @interface SettingsViewController ()
 
@@ -38,13 +39,7 @@
 {
     [super viewWillAppear:animated];
 
-    BOOL autoLockScreenValue = NO;
-    
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if ([prefs objectForKey:@"autoLockScreen"] != nil) {
-        autoLockScreenValue = [prefs boolForKey:@"autoLockScreen"];
-    }
-    
+    BOOL autoLockScreenValue = [Utilities initializeScreenAutoLock];
     [self.autoLockSwitch setOn:autoLockScreenValue animated:NO];
 }
 

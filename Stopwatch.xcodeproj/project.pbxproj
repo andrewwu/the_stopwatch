@@ -39,6 +39,7 @@
 		6C982FD0161833D700AA2E27 /* blueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C982FCC161833D700AA2E27 /* blueButton@2x.png */; };
 		6C982FD1161833D700AA2E27 /* blueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C982FCD161833D700AA2E27 /* blueButtonHighlight.png */; };
 		6C982FD2161833D700AA2E27 /* blueButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C982FCE161833D700AA2E27 /* blueButtonHighlight@2x.png */; };
+		6C9F14DE164242100072B4CF /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F14DD164242100072B4CF /* Utilities.m */; };
 		6C9FD739161AC93700D30F34 /* icon_stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD738161AC93700D30F34 /* icon_stopwatch.png */; };
 		6C9FD73B161AC93F00D30F34 /* icon_stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD73A161AC93F00D30F34 /* icon_stopwatch@2x.png */; };
 		6C9FD73D161AD48200D30F34 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD73C161AD48200D30F34 /* Default.png */; };
@@ -85,6 +86,8 @@
 		6C982FCC161833D700AA2E27 /* blueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButton@2x.png"; sourceTree = "<group>"; };
 		6C982FCD161833D700AA2E27 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonHighlight.png; sourceTree = "<group>"; };
 		6C982FCE161833D700AA2E27 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		6C9F14DC164242100072B4CF /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		6C9F14DD164242100072B4CF /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		6C9FD738161AC93700D30F34 /* icon_stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_stopwatch.png; path = ../icon_stopwatch.png; sourceTree = "<group>"; };
 		6C9FD73A161AC93F00D30F34 /* icon_stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@2x.png"; path = "../icon_stopwatch@2x.png"; sourceTree = "<group>"; };
 		6C9FD73C161AD48200D30F34 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				6C7CE46D1617D18800C077C4 /* ViewController.m */,
 				6C0063151633B4F600C73879 /* SettingsViewController.h */,
 				6C0063161633B4F600C73879 /* SettingsViewController.m */,
+				6C9F14DC164242100072B4CF /* Utilities.h */,
+				6C9F14DD164242100072B4CF /* Utilities.m */,
 				6C7CE4581617D18700C077C4 /* Supporting Files */,
 			);
 			path = Stopwatch;
@@ -282,6 +287,7 @@
 				6C7CE4621617D18700C077C4 /* AppDelegate.m in Sources */,
 				6C7CE46E1617D18800C077C4 /* ViewController.m in Sources */,
 				6C0063171633B4F600C73879 /* SettingsViewController.m in Sources */,
+				6C9F14DE164242100072B4CF /* Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
