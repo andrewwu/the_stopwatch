@@ -1,5 +1,5 @@
 # The Stopwatch
 
-A lightweight stopwatch for the iPhone. 
+A lightweight stopwatch and timer for iOS.
 
 http://thestopwatchapp.com
