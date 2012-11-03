@@ -11,5 +11,7 @@
 @interface Utilities : NSObject
 
 + (BOOL)initializeScreenAutoLock;
++ (void)setImage:(NSString *)imageName AndHighlightImage:(NSString *)highlightImageName forButton:(UIButton *)button;
++ (void)formatLabel:(UILabel *)label withTimeInterval:(NSTimeInterval)timeInterval;
 
 @end

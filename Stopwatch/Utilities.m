@@ -26,4 +26,29 @@
     return autoLockScreenValue;
 }
 
++ (void)setImage:(NSString *)imageName AndHighlightImage:(NSString *)highlightImageName forButton:(UIButton *)button {
+    UIImage *buttonImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:highlightImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+}
+
++ (void)formatLabel:(UILabel *)label withTimeInterval:(NSTimeInterval)timeInterval {
+    NSDate *temp = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    if (timeInterval >= 3600) {
+        [formatter setDateFormat:@"HH:mm:ss"];
+    } else {
+        [formatter setDateFormat:@"mm:ss"];
+    }
+    
+    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    NSString *str = [formatter stringFromDate:temp];
+    label.text = str;
+}
+
 @end

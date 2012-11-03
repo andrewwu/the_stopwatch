@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Utilities.h"
 
 #define SECONDS_PER_DAY 86400
 
@@ -18,7 +19,6 @@
 
 - (void)updateStopwatchLabel;
 - (void)updateStopwatchLabelWithInterval:(NSTimeInterval)elapsedTime;
-- (void)setImage:(NSString *)imageName AndHighlightImage:(NSString *)highlightImageName forButton:(UIButton *)button;
 - (void)showStartButton;
 - (void)showStopButton;
 
@@ -36,8 +36,8 @@
     self.timerActive = false;
     totalElapsedTime = 0;
     
-    [self setImage:@"blueButton.png" AndHighlightImage:@"blueButtonHighlight.png" forButton:self.resetButton];
-    [self setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
+    [Utilities setImage:@"blueButton.png" AndHighlightImage:@"blueButtonHighlight.png" forButton:self.resetButton];
+    [Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
     
     self.stopwatchLabel.text = @"00:00:0";
 }
@@ -62,14 +62,14 @@
 
 - (void)showStartButton {
     self.timerActive = NO;
-    [self setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
+    [Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
     [self.startStopButton setTitle: @"Start" forState: UIControlStateNormal];
     [self.startStopButton setTitle: @"Start" forState: UIControlStateHighlighted];
 }
 
 - (void)showStopButton {
     self.timerActive = YES;
-    [self setImage:@"orangeButton.png" AndHighlightImage:@"orangeButtonHighlight.png" forButton:self.startStopButton];
+    [Utilities setImage:@"orangeButton.png" AndHighlightImage:@"orangeButtonHighlight.png" forButton:self.startStopButton];
     [self.startStopButton setTitle: @"Stop" forState: UIControlStateNormal];
     [self.startStopButton setTitle: @"Stop" forState: UIControlStateHighlighted];
 }
@@ -106,14 +106,6 @@
 
     NSString *str = [formatter stringFromDate:temp];
     self.stopwatchLabel.text = str;
-}
-
-- (void)setImage:(NSString *)imageName AndHighlightImage:(NSString *)highlightImageName forButton:(UIButton *)button {
-    UIImage *buttonImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:highlightImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    
-    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [button setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
 }
 
 @end
