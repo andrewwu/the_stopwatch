@@ -27,11 +27,42 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
+    if (self.stopwatchViewController.timerActive) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+        [self.stopwatchViewController startStopButtonPressed:nil];
+
+        [defaults setObject:[NSDate date] forKey:@"kPauseTime"];
+        [defaults setObject:self.startTime forKey:@"kStartTime"];
+        [defaults setObject:[NSNumber numberWithDouble:self.totalElapsedTime] forKey:@"kTotalElapsedTime"];
+        [defaults synchronize];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSNumber *totalElapsedTime = [defaults objectForKey:@"kTotalElapsedTime"];
+    NSDate *pauseTime = [defaults objectForKey:@"kPauseTime"];
+    NSDate *startTime = [defaults objectForKey:@"kStartTime"];
+
+    if (pauseTime != nil && totalElapsedTime != nil && startTime != nil) {
+        self.startTime = startTime;
+
+        NSTimeInterval backgroundElapsedTime = [[NSDate date] timeIntervalSinceDate:pauseTime];
+
+        self.totalElapsedTime = [totalElapsedTime doubleValue] + backgroundElapsedTime;
+
+        [defaults removeObjectForKey:@"kPauseTime"];
+        [defaults removeObjectForKey:@"kTotalElapsedTime"];
+        [defaults synchronize];
+
+        [self.stopwatchViewController startStopButtonPressed:nil];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

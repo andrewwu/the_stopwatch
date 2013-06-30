@@ -8,21 +8,19 @@
 
 #import "ViewController.h"
 #import "Utilities.h"
+#import "AppDelegate.h"
 
 #define SECONDS_PER_DAY 86400
 
 @interface ViewController () {
     NSTimer *timer;
-    NSDate *startTime;
-    NSTimeInterval totalElapsedTime;
+    AppDelegate* appDelegate;
 }
 
 - (void)updateStopwatchLabel;
 - (void)updateStopwatchLabelWithInterval:(NSTimeInterval)elapsedTime;
 - (void)showStartButton;
 - (void)showStopButton;
-
-@property (nonatomic) BOOL timerActive;
 
 @end
 
@@ -33,8 +31,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.stopwatchViewController = self;
+
     self.timerActive = false;
-    totalElapsedTime = 0;
+    appDelegate.totalElapsedTime = 0;
     
     [Utilities setImage:@"blueButton.png" AndHighlightImage:@"blueButtonHighlight.png" forButton:self.resetButton];
     [Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
@@ -51,12 +52,12 @@
 - (IBAction)startStopButtonPressed:(id)sender {
     if (!self.timerActive) {
         [self showStopButton];
-        startTime = [NSDate date];
+        appDelegate.startTime = [NSDate date];
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateStopwatchLabel) userInfo:nil repeats:YES];
     } else {
         [self showStartButton];
         [timer invalidate];
-        totalElapsedTime += [[NSDate date] timeIntervalSinceDate:startTime];
+        appDelegate.totalElapsedTime += [[NSDate date] timeIntervalSinceDate:appDelegate.startTime];
     }
 }
 
@@ -76,14 +77,14 @@
 
 - (IBAction)resetButtonPressed:(id)sender {
     self.timerActive = NO;
-    totalElapsedTime = 0;
+    appDelegate.totalElapsedTime = 0;
     [timer invalidate];
     [self updateStopwatchLabelWithInterval:0];
     [self showStartButton];
 }
 
 - (void)updateStopwatchLabel {
-    NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime] + totalElapsedTime;
+    NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:appDelegate.startTime] + appDelegate.totalElapsedTime;
     if (elapsedTime >= SECONDS_PER_DAY) {
         [self resetButtonPressed:nil];
     } else {

@@ -15,5 +15,6 @@
 - (IBAction)resetButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (nonatomic) BOOL *timerActive;
 
 @end
