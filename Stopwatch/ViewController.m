@@ -9,18 +9,22 @@
 #import "ViewController.h"
 #import "Utilities.h"
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define SECONDS_PER_DAY 86400
 
 @interface ViewController () {
     NSTimer *timer;
     AppDelegate* appDelegate;
+    NSInteger lastBeepCount;
 }
 
 - (void)updateStopwatchLabel;
 - (void)updateStopwatchLabelWithInterval:(NSTimeInterval)elapsedTime;
 - (void)showStartButton;
 - (void)showStopButton;
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -34,6 +38,7 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.stopwatchViewController = self;
 
+    lastBeepCount = 0;
     self.timerActive = false;
     appDelegate.totalElapsedTime = 0;
     
@@ -85,10 +90,19 @@
 
 - (void)updateStopwatchLabel {
     NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:appDelegate.startTime] + appDelegate.totalElapsedTime;
+
     if (elapsedTime >= SECONDS_PER_DAY) {
         [self resetButtonPressed:nil];
     } else {
         [self updateStopwatchLabelWithInterval:elapsedTime];
+        
+        NSInteger beep_interval = 3;
+        NSInteger count = abs(elapsedTime);
+        
+        if (lastBeepCount != count && count % beep_interval == 0) {
+            [self playBeep];
+            lastBeepCount = count;
+        }
     }
 }
 
@@ -107,6 +121,17 @@
 
     NSString *str = [formatter stringFromDate:temp];
     self.stopwatchLabel.text = str;
+}
+
+- (void)playBeep {
+    NSLog(@"beep");
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/dingling.mp3", [[NSBundle mainBundle] resourcePath]];
+    
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    
+    [self.audioPlayer play];
 }
 
 @end

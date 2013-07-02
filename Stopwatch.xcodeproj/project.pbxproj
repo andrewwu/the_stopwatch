@@ -47,6 +47,7 @@
 		6C9FD73D161AD48200D30F34 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD73C161AD48200D30F34 /* Default.png */; };
 		6C9FD73F161AD4A900D30F34 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD73E161AD4A900D30F34 /* Default@2x.png */; };
 		6C9FD741161AD4E100D30F34 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FD740161AD4E100D30F34 /* Default-568h@2x.png */; };
+		6CC914B21782780300203E13 /* dingling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6CC914B11782780300203E13 /* dingling.mp3 */; };
 		6CE0D67E164252840000AFCC /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0D67D164252840000AFCC /* TimerViewController.m */; };
 		6CE0D681164256F70000AFCC /* glyphicons_053_alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0D67F164256F70000AFCC /* glyphicons_053_alarm.png */; };
 		6CE0D682164256F70000AFCC /* glyphicons_053_alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0D680164256F70000AFCC /* glyphicons_053_alarm@2x.png */; };
@@ -100,6 +101,7 @@
 		6C9FD73C161AD48200D30F34 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		6C9FD73E161AD4A900D30F34 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		6C9FD740161AD4E100D30F34 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		6CC914B11782780300203E13 /* dingling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dingling.mp3; sourceTree = "<group>"; };
 		6CE0D67C164252840000AFCC /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		6CE0D67D164252840000AFCC /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		6CE0D67F164256F70000AFCC /* glyphicons_053_alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_053_alarm.png; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		6C7CE4581617D18700C077C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CC914B11782780300203E13 /* dingling.mp3 */,
 				6C907B9F1643A67C00E0D851 /* alert.mp3 */,
 				6CE0D67F164256F70000AFCC /* glyphicons_053_alarm.png */,
 				6CE0D680164256F70000AFCC /* glyphicons_053_alarm@2x.png */,
@@ -287,6 +290,7 @@
 				6C9FD73D161AD48200D30F34 /* Default.png in Resources */,
 				6C9FD73F161AD4A900D30F34 /* Default@2x.png in Resources */,
 				6C9FD741161AD4E100D30F34 /* Default-568h@2x.png in Resources */,
+				6CC914B21782780300203E13 /* dingling.mp3 in Resources */,
 				6C00630D1633B09200C73879 /* glyphicons_055_stopwatch.png in Resources */,
 				6C0063101633B11500C73879 /* glyphicons_023_cogwheels.png in Resources */,
 				6C0063121633B44200C73879 /* glyphicons_023_cogwheels@2x.png in Resources */,
