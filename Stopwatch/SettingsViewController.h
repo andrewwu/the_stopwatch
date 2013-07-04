@@ -11,6 +11,7 @@
 @interface SettingsViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UISwitch *autoLockSwitch;
+@property (strong, nonatomic) IBOutlet UILabel *beepIntervalLabel;
 - (IBAction)autoLockSwitchPressed:(id)sender;
 
 @end

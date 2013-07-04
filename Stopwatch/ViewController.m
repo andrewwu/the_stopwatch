@@ -83,6 +83,7 @@
 - (IBAction)resetButtonPressed:(id)sender {
     self.timerActive = NO;
     appDelegate.totalElapsedTime = 0;
+    lastBeepCount = 0;
     [timer invalidate];
     [self updateStopwatchLabelWithInterval:0];
     [self showStartButton];
@@ -96,10 +97,10 @@
     } else {
         [self updateStopwatchLabelWithInterval:elapsedTime];
         
-        NSInteger beep_interval = 3;
+        NSInteger beepIntervalInSeconds = appDelegate.beepInterval * 60;
         NSInteger count = abs(elapsedTime);
         
-        if (lastBeepCount != count && count % beep_interval == 0) {
+        if (beepIntervalInSeconds > 0 && lastBeepCount != count && (count - lastBeepCount) % beepIntervalInSeconds == 0) {
             [self playBeep];
             lastBeepCount = count;
         }
@@ -124,13 +125,10 @@
 }
 
 - (void)playBeep {
-    NSLog(@"beep");
     NSString *soundFilePath = [NSString stringWithFormat:@"%@/dingling.mp3", [[NSBundle mainBundle] resourcePath]];
-    
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-    
     [self.audioPlayer play];
 }
 

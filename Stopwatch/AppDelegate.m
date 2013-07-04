@@ -14,6 +14,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    self.beepInterval = 0;
+    
     return YES;
 }
 							
@@ -27,11 +30,12 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-
+    [Utilities backupData];
+    
     if (self.stopwatchViewController.timerActive) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
         [self.stopwatchViewController startStopButtonPressed:nil];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
         [defaults setObject:[NSDate date] forKey:@"kPauseTime"];
         [defaults setObject:self.startTime forKey:@"kStartTime"];
@@ -69,11 +73,16 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [Utilities initializeScreenAutoLock];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.beepInterval = [[defaults objectForKey:@"kBeepInterval"] integerValue];
+    NSLog(@"app became active - restored bp: %i", self.beepInterval);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [Utilities backupData];
 }
 
 @end

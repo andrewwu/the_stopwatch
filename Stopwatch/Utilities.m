@@ -7,6 +7,7 @@
 //
 
 #import "Utilities.h"
+#import "AppDelegate.h"
 
 @implementation Utilities
 
@@ -49,6 +50,16 @@
     
     NSString *str = [formatter stringFromDate:temp];
     label.text = str;
+}
+
++ (void)backupData {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    [defaults setObject:[NSNumber numberWithInteger:appDelegate.beepInterval] forKey:@"kBeepInterval"];
+
+    NSLog(@"app became entered bkg - storing bp: %i", appDelegate.beepInterval);    
 }
 
 @end

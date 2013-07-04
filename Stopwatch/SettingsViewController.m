@@ -8,8 +8,14 @@
 
 #import "SettingsViewController.h"
 #import "Utilities.h"
+#import "AppDelegate.h"
+#import <ActionSheetPicker.h>
 
-@interface SettingsViewController ()
+@interface SettingsViewController () {
+    AppDelegate *appDelegate;
+}
+
+@property (strong, nonatomic) NSMutableArray *pickerArray;
 
 @end
 
@@ -33,6 +39,24 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    self.pickerArray = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i <= 60; i++) {
+        NSString *value = @"";
+        
+        if (i == 0) {
+            value = @"Never";
+        } else if (i == 1) {
+            value = @"1 minute";
+        } else {
+            value = [NSString stringWithFormat:@"%i minutes", i];
+        }
+        
+        [self.pickerArray addObject:value];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -41,6 +65,7 @@
 
     BOOL autoLockScreenValue = [Utilities initializeScreenAutoLock];
     [self.autoLockSwitch setOn:autoLockScreenValue animated:NO];
+    [self setBeepInterval:appDelegate.beepInterval];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,17 +139,34 @@
 }
 */
 
+- (void)setBeepInterval:(NSInteger)selectedIndex {
+    NSString *label = @"Never";
+    
+    if (selectedIndex > 0) {
+        label = [NSString stringWithFormat:@"%i min", selectedIndex];
+    }
+    
+    self.beepIntervalLabel.text = label;
+    appDelegate.beepInterval = selectedIndex;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (indexPath.row == 1) {
+        ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+            [self setBeepInterval:selectedIndex];
+        };
+
+        id cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        
+        ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+            NSLog(@"Beep Interval Picker Canceled");
+        };
+        
+        [ActionSheetStringPicker showPickerWithTitle:@"Select Beep Interval" rows:self.pickerArray initialSelection:appDelegate.beepInterval doneBlock:done cancelBlock:cancel origin:cell];
+    }
 }
 
 - (IBAction)autoLockSwitchPressed:(id)sender
