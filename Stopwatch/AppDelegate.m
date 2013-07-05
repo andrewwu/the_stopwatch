@@ -82,6 +82,8 @@
             localNotif.timeZone = [NSTimeZone defaultTimeZone];
             localNotif.soundName = @"dingling.mp3";
             
+            NSLog(@"scheduled fire date: %@", fireDate);
+            
             if (i == numberOfNotifications) {
                 localNotif.alertAction = @"I'm here";
                 localNotif.alertBody = @"Action is required to continue beep intervals.";
@@ -99,12 +101,12 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSNumber *totalElapsedTime = [defaults objectForKey:@"kTotalElapsedTime"];
     NSDate *pauseTime = [defaults objectForKey:@"kPauseTime"];
     NSDate *startTime = [defaults objectForKey:@"kStartTime"];
+    self.lastBeepTime = [defaults objectForKey:@"kLastBeepTime"];
     
     if (pauseTime != nil && totalElapsedTime != nil && startTime != nil) {
         self.startTime = startTime;
@@ -128,7 +130,6 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.beepInterval = [[defaults objectForKey:@"kBeepInterval"] integerValue];
-    self.lastBeepTime = [defaults objectForKey:@"kLastBeepTime"];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
