@@ -14,7 +14,8 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic) NSTimeInterval totalElapsedTime;
 @property (strong, nonatomic) ViewController *stopwatchViewController;
-@property (strong ,nonatomic) NSDate *startTime;
+@property (strong, nonatomic) NSDate *startTime;
 @property (nonatomic) NSInteger beepInterval;
+@property (strong, nonatomic) NSDate *lastBeepTime;
 
 @end

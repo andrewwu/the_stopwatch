@@ -41,6 +41,7 @@
     lastBeepCount = 0;
     self.timerActive = false;
     appDelegate.totalElapsedTime = 0;
+    appDelegate.lastBeepTime = nil;
     
     [Utilities setImage:@"blueButton.png" AndHighlightImage:@"blueButtonHighlight.png" forButton:self.resetButton];
     [Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
@@ -83,6 +84,7 @@
 - (IBAction)resetButtonPressed:(id)sender {
     self.timerActive = NO;
     appDelegate.totalElapsedTime = 0;
+    appDelegate.lastBeepTime = nil;
     lastBeepCount = 0;
     [timer invalidate];
     [self updateStopwatchLabelWithInterval:0];
@@ -103,6 +105,7 @@
         if (beepIntervalInSeconds > 0 && lastBeepCount != count && (count - lastBeepCount) % beepIntervalInSeconds == 0) {
             [self playBeep];
             lastBeepCount = count;
+            appDelegate.lastBeepTime = [NSDate date];
         }
     }
 }

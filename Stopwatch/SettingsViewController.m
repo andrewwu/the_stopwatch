@@ -148,6 +148,7 @@
     
     self.beepIntervalLabel.text = label;
     appDelegate.beepInterval = selectedIndex;
+    appDelegate.lastBeepTime = [NSDate date];
 }
 
 #pragma mark - Table view delegate
