@@ -39,7 +39,7 @@
     appDelegate.stopwatchViewController = self;
 
     lastBeepCount = 0;
-    self.timerActive = false;
+    self.timerActive = NO;
     appDelegate.totalElapsedTime = 0;
     appDelegate.lastBeepTime = nil;
     
