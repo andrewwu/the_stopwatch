@@ -14,5 +14,6 @@
 + (void)setImage:(NSString *)imageName AndHighlightImage:(NSString *)highlightImageName forButton:(UIButton *)button;
 + (void)formatLabel:(UILabel *)label withTimeInterval:(NSTimeInterval)timeInterval;
 + (void)backupData;
++ (NSTimeInterval)beepIntervalInSeconds;
 
 @end

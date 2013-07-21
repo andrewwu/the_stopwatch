@@ -99,7 +99,7 @@
     } else {
         [self updateStopwatchLabelWithInterval:elapsedTime];
         
-        NSInteger beepIntervalInSeconds = appDelegate.beepInterval * 60;
+        NSInteger beepIntervalInSeconds = [Utilities beepIntervalInSeconds];
         NSInteger count = abs(elapsedTime);
         
         if (beepIntervalInSeconds > 0 && lastBeepCount != count && (count - lastBeepCount) % beepIntervalInSeconds == 0) {

@@ -48,10 +48,10 @@
         
         if (self.beepInterval > 0) {
             if (self.lastBeepTime == nil) {
-                initialFireDate = [[NSDate date] dateByAddingTimeInterval:((self.beepInterval * 60) - self.totalElapsedTime)];
+                initialFireDate = [[NSDate date] dateByAddingTimeInterval:([Utilities beepIntervalInSeconds] - self.totalElapsedTime)];
             } else {
                 while ([initialFireDate compare:[NSDate date]] == NSOrderedAscending) {
-                    initialFireDate = [initialFireDate dateByAddingTimeInterval:(self.beepInterval * 60)];
+                    initialFireDate = [initialFireDate dateByAddingTimeInterval:[Utilities beepIntervalInSeconds]];
                 }
             }
             
@@ -74,7 +74,7 @@
         localNotif = [[UILocalNotification alloc] init];
         
         if (localNotif) {
-            NSTimeInterval beepInterval = self.beepInterval * 60;
+            NSTimeInterval beepInterval = [Utilities beepIntervalInSeconds];
             
             NSDate *fireDate = [startDate dateByAddingTimeInterval:beepInterval * i];
             

@@ -62,4 +62,9 @@
     NSLog(@"app became entered bkg - storing bp: %i", appDelegate.beepInterval);    
 }
 
++ (NSTimeInterval)beepIntervalInSeconds {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return appDelegate.beepInterval * 60;
+}
+
 @end
