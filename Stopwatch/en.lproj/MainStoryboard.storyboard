@@ -30,7 +30,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD4-t1-SVM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD4-t1-SVM" customClass="BButton">
                                 <rect key="frame" x="27" y="136" width="267" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="aLB-BH-GKn"/>
@@ -47,7 +47,7 @@
                                     <action selector="startStopButtonPressed:" destination="2" eventType="touchUpInside" id="U9k-L1-15A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-mu-sdb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-mu-sdb" customClass="BButton">
                                 <rect key="frame" x="27" y="215" width="267" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="nFB-HN-2z6"/>

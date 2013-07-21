@@ -12,3 +12,9 @@
 #define COCOAPODS_VERSION_MINOR_ActionSheetPicker 0
 #define COCOAPODS_VERSION_PATCH_ActionSheetPicker 2
 
+// BButton
+#define COCOAPODS_POD_AVAILABLE_BButton
+#define COCOAPODS_VERSION_MAJOR_BButton 2
+#define COCOAPODS_VERSION_MINOR_BButton 0
+#define COCOAPODS_VERSION_PATCH_BButton 0
+
