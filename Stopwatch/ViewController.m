@@ -46,7 +46,12 @@
     [Utilities setImage:@"blueButton.png" AndHighlightImage:@"blueButtonHighlight.png" forButton:self.resetButton];
     [Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
     */
-    self.stopwatchLabel.text = @"00:00:0";
+    [self.startStopButton setType:BButtonTypeTwitter];
+    [self.resetButton setType:BButtonTypeGray];
+    [self.startStopButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:30.0]];
+    
+    [self.resetButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:30.0]];
+    self.stopwatchLabel.text = @"00:00.0";
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +75,7 @@
 - (void)showStartButton {
     self.timerActive = NO;
     //[Utilities setImage:@"greenButton.png" AndHighlightImage:@"greenButtonHightlight.png" forButton:self.startStopButton];
+    [self.startStopButton setType:BButtonTypeTwitter];
     [self.startStopButton setTitle: @"Start" forState: UIControlStateNormal];
     [self.startStopButton setTitle: @"Start" forState: UIControlStateHighlighted];
 }
@@ -77,8 +83,9 @@
 - (void)showStopButton {
     self.timerActive = YES;
     //[Utilities setImage:@"orangeButton.png" AndHighlightImage:@"orangeButtonHighlight.png" forButton:self.startStopButton];
-    [self.startStopButton setTitle: @"Stop" forState: UIControlStateNormal];
-    [self.startStopButton setTitle: @"Stop" forState: UIControlStateHighlighted];
+    [self.startStopButton setType:BButtonTypeDanger];
+    [self.startStopButton setTitle: @"Pause" forState: UIControlStateNormal];
+    [self.startStopButton setTitle: @"Pause" forState: UIControlStateHighlighted];
 }
 
 - (IBAction)resetButtonPressed:(id)sender {
@@ -116,9 +123,9 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
     if (elapsedTime >= 3600) {
-        [formatter setDateFormat:@"HH:mm:ss:S"];
+        [formatter setDateFormat:@"HH:mm:ss.S"];
     } else {
-        [formatter setDateFormat:@"mm:ss:S"];
+        [formatter setDateFormat:@"mm:ss.S"];
     }
     
     [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
