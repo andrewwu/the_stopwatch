@@ -12,6 +12,8 @@
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>icon_stopwatch@114</string>
