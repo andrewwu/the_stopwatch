@@ -20,6 +20,7 @@
 		6C7CE4621617D18700C077C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CE4611617D18700C077C4 /* AppDelegate.m */; };
 		6C7CE46B1617D18800C077C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE4691617D18800C077C4 /* MainStoryboard.storyboard */; };
 		6C7CE46E1617D18800C077C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CE46D1617D18800C077C4 /* ViewController.m */; };
+		6C847AF117E683B400D81F38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C847AF017E683B400D81F38 /* Images.xcassets */; };
 		6C907B9A1643A0EE00E0D851 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C907B991643A0EE00E0D851 /* AVFoundation.framework */; };
 		6C907BA01643A67C00E0D851 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C907B9F1643A67C00E0D851 /* alert.mp3 */; };
 		6C982FBE1618065300AA2E27 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C982FB21618065300AA2E27 /* blackButton.png */; };
@@ -70,9 +71,7 @@
 		6C7CE46A1617D18800C077C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6C7CE46C1617D18800C077C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6C7CE46D1617D18800C077C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6C8381A517E63EA600ACE33C /* icon_stopwatch@57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@57.png"; path = "../icon_stopwatch@57.png"; sourceTree = "<group>"; };
-		6C8381A617E63EB000ACE33C /* icon_stopwatch@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@114.png"; path = "../icon_stopwatch@114.png"; sourceTree = "<group>"; };
-		6C8381A717E63EBC00ACE33C /* icon_stopwatch@120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@120.png"; path = "../icon_stopwatch@120.png"; sourceTree = "<group>"; };
+		6C847AF017E683B400D81F38 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6C907B991643A0EE00E0D851 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6C907B9F1643A67C00E0D851 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
 		6C982FB21618065300AA2E27 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
@@ -101,6 +100,9 @@
 		6CE0D67D164252840000AFCC /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		6CE0D67F164256F70000AFCC /* glyphicons_053_alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_053_alarm.png; sourceTree = "<group>"; };
 		6CE0D680164256F70000AFCC /* glyphicons_053_alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_053_alarm@2x.png"; sourceTree = "<group>"; };
+		6CEC764417E681A700287E55 /* icon_stopwatch@57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@57.png"; path = "../icon_stopwatch@57.png"; sourceTree = "<group>"; };
+		6CEC764517E681BC00287E55 /* icon_stopwatch@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@114.png"; path = "../icon_stopwatch@114.png"; sourceTree = "<group>"; };
+		6CEC764617E681C700287E55 /* icon_stopwatch@120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_stopwatch@120.png"; path = "../icon_stopwatch@120.png"; sourceTree = "<group>"; };
 		EFA00C5FB63246FCB96801DE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 				6CE0D67D164252840000AFCC /* TimerViewController.m */,
 				6C9F14DC164242100072B4CF /* Utilities.h */,
 				6C9F14DD164242100072B4CF /* Utilities.m */,
+				6C847AF017E683B400D81F38 /* Images.xcassets */,
 				6C7CE4581617D18700C077C4 /* Supporting Files */,
 			);
 			path = Stopwatch;
@@ -172,9 +175,9 @@
 		6C7CE4581617D18700C077C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6C8381A717E63EBC00ACE33C /* icon_stopwatch@120.png */,
-				6C8381A617E63EB000ACE33C /* icon_stopwatch@114.png */,
-				6C8381A517E63EA600ACE33C /* icon_stopwatch@57.png */,
+				6CEC764617E681C700287E55 /* icon_stopwatch@120.png */,
+				6CEC764517E681BC00287E55 /* icon_stopwatch@114.png */,
+				6CEC764417E681A700287E55 /* icon_stopwatch@57.png */,
 				6CC914B11782780300203E13 /* dingling.mp3 */,
 				6C907B9F1643A67C00E0D851 /* alert.mp3 */,
 				6CE0D67F164256F70000AFCC /* glyphicons_053_alarm.png */,
@@ -284,6 +287,7 @@
 				6C9FD73D161AD48200D30F34 /* Default.png in Resources */,
 				6C9FD73F161AD4A900D30F34 /* Default@2x.png in Resources */,
 				6C9FD741161AD4E100D30F34 /* Default-568h@2x.png in Resources */,
+				6C847AF117E683B400D81F38 /* Images.xcassets in Resources */,
 				6CC914B21782780300203E13 /* dingling.mp3 in Resources */,
 				6C00630D1633B09200C73879 /* glyphicons_055_stopwatch.png in Resources */,
 				6C0063101633B11500C73879 /* glyphicons_023_cogwheels.png in Resources */,
@@ -420,6 +424,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFA00C5FB63246FCB96801DE /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -433,6 +439,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFA00C5FB63246FCB96801DE /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
